@@ -9,9 +9,15 @@
 
     <style>
         body {
+            /* Imaginea de fundal */
+            background: linear-gradient(rgba(26, 26, 26, 0.85), rgba(26, 26, 26, 0.85)), url('poza4.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             background-color: #1a1a1a;
+            
             color: #ffffff;
-            font-family: 'Segoe UI', Arial, sans-serif;
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -19,7 +25,8 @@
             min-height: 100vh;
             margin: 0;
             text-align: center;
-            overflow: hidden;
+            overflow-x: hidden;
+            overflow-y: auto;
         }
 
         .content {
@@ -28,19 +35,24 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 20px;
+            padding: 40px 20px;
+            z-index: 1;
         }
 
         img.logo-main {
             max-width: 180px;
             height: auto;
             margin-bottom: 20px;
+            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.6));
         }
 
         h1 {
             font-size: 1.8rem;
             margin-bottom: 10px;
             line-height: 1.2;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
 
         .highlight {
@@ -48,9 +60,11 @@
         }
 
         p {
-            margin-bottom: 30px;
-            color: #ccc;
+            margin-bottom: 35px;
+            color: #eee;
             font-size: 1.1rem;
+            max-width: 450px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
         }
 
         .buton-puls {
@@ -58,31 +72,37 @@
             color: #000;
             padding: 18px 45px;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 800;
             border-radius: 50px;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             border: none;
             cursor: pointer;
             display: inline-block;
-            box-shadow: 0 0 0 0 rgba(255, 204, 0, 0.7);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
             animation: pulse-animation 2s infinite;
-            transition: transform 0.2s;
+            transition: transform 0.2s, background-color 0.2s;
+            outline: none;
         }
 
-        /* --- FOOTER MINIMALIST --- */
+        .buton-puls:hover {
+            transform: scale(1.05);
+            background-color: #ffd633;
+        }
+
         footer {
             width: 100%;
-            padding-bottom: 30px;
+            padding: 20px 0 30px 0;
             font-size: 0.85rem;
-            color: #666;
+            color: #bbb;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 15px;
+            z-index: 1;
         }
 
         footer a {
-            color: #888;
+            color: #ccc;
             text-decoration: none;
             transition: 0.3s;
         }
@@ -91,26 +111,19 @@
             color: #ffcc00;
         }
 
-        /* Logo Facebook Minimalist */
         .fb-minimal {
             font-family: sans-serif;
             font-size: 1.2rem;
             font-weight: bold;
-            color: #888 !important;
+            color: #ccc !important;
             line-height: 1;
-            transition: 0.3s;
-        }
-
-        .fb-minimal:hover {
-            color: #1877F2 !important;
         }
 
         @media (max-width: 600px) {
             img.logo-main { max-width: 140px; }
             h1 { font-size: 1.4rem; }
-            p { font-size: 0.9rem; padding: 0 15px; }
-            .buton-puls { padding: 15px 30px; font-size: 1rem; }
-            footer { font-size: 0.75rem; gap: 10px; padding-bottom: 20px; }
+            p { font-size: 1rem; }
+            .buton-puls { padding: 16px 30px; font-size: 1rem; }
         }
 
         @keyframes pulse-animation {
@@ -128,6 +141,7 @@
             z-index: 9999;
             justify-content: center;
             align-items: center;
+            backdrop-filter: blur(8px);
         }
 
         #f230-container {
@@ -174,8 +188,14 @@
     </div>
 
     <script>
-        function deschideFormular() { document.getElementById('f230-overlay').style.display = 'flex'; }
-        function inchideFormular() { document.getElementById('f230-overlay').style.display = 'none'; }
+        function deschideFormular() { 
+            document.getElementById('f230-overlay').style.display = 'flex'; 
+            document.body.style.overflow = 'hidden';
+        }
+        function inchideFormular() { 
+            document.getElementById('f230-overlay').style.display = 'none'; 
+            document.body.style.overflow = 'auto';
+        }
         document.addEventListener('keydown', function(e) { if (e.key === "Escape") inchideFormular(); });
         document.getElementById('f230-overlay').addEventListener('click', function(e) { if (e.target === this) inchideFormular(); });
     </script>
