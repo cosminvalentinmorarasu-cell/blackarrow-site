@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Black Arrow Belcești</title>
+    
+    <link rel="icon" type="image/png" href="logo2.png">
+
     <style>
         body {
             background-color: #1a1a1a;
@@ -64,27 +67,49 @@
         }
 
         @keyframes pulse-animation {
-            0% {
-                box-shadow: 0 0 0 0 rgba(255, 204, 0, 0.7);
-            }
-            70% {
-                box-shadow: 0 0 0 20px rgba(255, 204, 0, 0);
-            }
-            100% {
-                box-shadow: 0 0 0 0 rgba(255, 204, 0, 0);
-            }
+            0% { box-shadow: 0 0 0 0 rgba(255, 204, 0, 0.7); }
+            70% { box-shadow: 0 0 0 20px rgba(255, 204, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 204, 0, 0); }
         }
 
-        div[id*="f230-modal"], .f230-modal {
-            width: 95% !important;
-            max-width: 1100px !important;
-            height: 90vh !important;
-            top: 5vh !important;
+        #f230-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
         }
 
-        iframe[src*="formular230"] {
-            width: 100% !important;
-            height: 100% !important;
+        #f230-container {
+            width: 95%;
+            max-width: 1100px;
+            height: 90vh;
+            background: #fff;
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #f230-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .inchide-f230 {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 30px;
+            color: #000;
+            cursor: pointer;
+            font-weight: bold;
+            z-index: 10000;
         }
     </style>
 </head>
@@ -95,11 +120,30 @@
     <h1>ASOCIAȚIA CLUB SPORTIV<br><span class="highlight">BLACK ARROW BELCEȘTI</span></h1>
     <p>Ajută-ne să creștem! Redirecționează 3,5% din impozit.</p>
 
-    <button class="buton-puls" id="btnDeschide">
+    <button class="buton-puls" onclick="deschideFormular()">
         COMPLETEAZĂ FORMULARUL 230
     </button>
 
-    <script src="https://formular230.ro/share/1dd0bd7775"></script>
+    <div id="f230-overlay">
+        <div id="f230-container">
+            <span class="inchide-f230" onclick="inchideFormular()">&times;</span>
+            <iframe src="https://formular230.ro/asociatia-club-sportiv-black-arrow-belcesti"></iframe>
+        </div>
+    </div>
 
     <script>
-        document.getElementById('btnDeschide').addEventListener
+        function deschideFormular() {
+            document.getElementById('f230-overlay').style.display = 'flex';
+        }
+
+        function inchideFormular() {
+            document.getElementById('f230-overlay').style.display = 'none';
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === "Escape") inchideFormular();
+        });
+    </script>
+
+</body>
+</html>
