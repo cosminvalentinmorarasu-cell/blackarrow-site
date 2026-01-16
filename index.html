@@ -2,18 +2,19 @@
 <html lang="ro">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Black Arrow Belcești</title>
     
     <link rel="icon" type="image/png" href="logo2.png?v=2">
 
     <style>
+        * { box-sizing: border-box; }
+
         body {
-            /* FUNDAL MODERN: Opacitate redusa (0.92) pentru discretie maxima */
             background: linear-gradient(rgba(26, 26, 26, 0.92), rgba(26, 26, 26, 0.92)), url('poza4.png');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed; /* Imaginea ramane fixa, oferind un efect de profunzime */
+            background-attachment: fixed;
             background-repeat: no-repeat;
             background-color: #1a1a1a;
             
@@ -21,13 +22,10 @@
             font-family: 'Segoe UI', Roboto, Arial, sans-serif;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
+            height: 100vh; /* Fixăm înălțimea la fix 100% din ecran */
             margin: 0;
             text-align: center;
-            overflow-x: hidden;
-            overflow-y: auto;
+            overflow: hidden; /* Eliminăm scroll-ul general */
         }
 
         .content {
@@ -36,24 +34,22 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 40px 20px;
-            z-index: 1;
+            padding: 20px;
+            gap: 10px; /* Spațiu controlat între elemente */
         }
 
         img.logo-main {
-            max-width: 180px;
+            max-width: 22vh; /* Logo-ul se micșorează în funcție de înălțimea ecranului */
             height: auto;
-            margin-bottom: 20px;
             filter: drop-shadow(0 5px 15px rgba(0,0,0,0.6));
         }
 
         h1 {
-            font-size: 1.8rem;
-            margin-bottom: 10px;
+            font-size: 1.6rem;
+            margin: 0;
             line-height: 1.2;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-weight: 800;
+            letter-spacing: 1px;
         }
 
         .highlight {
@@ -61,81 +57,57 @@
         }
 
         p {
-            margin-bottom: 35px;
-            color: rgba(255, 255, 255, 0.7); /* Text mai fin, gri deschis */
-            font-size: 1.1rem;
-            max-width: 450px;
+            margin: 5px 0 15px 0;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1rem;
+            max-width: 400px;
         }
 
         .buton-puls {
             background-color: #ffcc00;
             color: #000;
-            padding: 18px 45px;
+            padding: 15px 35px;
             text-decoration: none;
             font-weight: 800;
             border-radius: 50px;
-            font-size: 1.1rem;
+            font-size: 1rem;
             border: none;
             cursor: pointer;
-            display: inline-block;
             box-shadow: 0 10px 20px rgba(0,0,0,0.3);
             animation: pulse-animation 2s infinite;
             transition: all 0.3s ease;
-            outline: none;
-        }
-
-        .buton-puls:hover {
-            transform: translateY(-3px) scale(1.03);
-            background-color: #ffd633;
-            box-shadow: 0 15px 25px rgba(255, 204, 0, 0.2);
         }
 
         footer {
-            width: 100%;
-            padding: 20px 0 30px 0;
+            height: 60px; /* Înălțime fixă pentru subsol */
             font-size: 0.8rem;
             color: rgba(255, 255, 255, 0.4);
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 15px;
-            z-index: 1;
+            padding-bottom: 10px;
         }
 
-        footer a {
-            color: rgba(255, 255, 255, 0.5);
-            text-decoration: none;
-            transition: 0.3s;
-        }
+        footer a { color: rgba(255, 255, 255, 0.5); text-decoration: none; }
+        .fb-minimal { font-family: sans-serif; font-size: 1.2rem; font-weight: bold; }
 
-        footer a:hover {
-            color: #ffcc00;
-        }
-
-        .fb-minimal {
-            font-family: sans-serif;
-            font-size: 1.2rem;
-            font-weight: bold;
-        }
-
-        /* AJUSTARI PENTRU MOBIL */
-        @media (max-width: 600px) {
-            body {
-                background-attachment: scroll; /* Pe unele telefoane "fixed" poate crea lag */
-            }
-            img.logo-main { max-width: 130px; }
+        /* AJUSTĂRI AGRESIVE PENTRU ECRANE MICI */
+        @media (max-height: 700px) {
+            img.logo-main { max-width: 15vh; }
             h1 { font-size: 1.3rem; }
-            p { font-size: 0.95rem; }
-            .buton-puls { padding: 16px 28px; font-size: 1rem; }
+            p { font-size: 0.9rem; margin-bottom: 10px; }
+            .buton-puls { padding: 12px 25px; font-size: 0.9rem; }
+            .content { gap: 5px; }
         }
 
         @keyframes pulse-animation {
             0% { box-shadow: 0 0 0 0 rgba(255, 204, 0, 0.6); }
-            70% { box-shadow: 0 0 0 20px rgba(255, 204, 0, 0); }
+            70% { box-shadow: 0 0 0 15px rgba(255, 204, 0, 0); }
             100% { box-shadow: 0 0 0 0 rgba(255, 204, 0, 0); }
         }
 
-        /* OVERLAY FORMULAR */
+        /* OVERLAY FORMULAR - rămâne la fel */
         #f230-overlay {
             display: none;
             position: fixed;
@@ -169,7 +141,7 @@
         <img src="logo2.png" alt="Logo Black Arrow" class="logo-main">
 
         <h1>ASOCIAȚIA CLUB SPORTIV<br><span class="highlight">BLACK ARROW BELCEȘTI</span></h1>
-        <p>Ajută-ne să creștem performanța! Redirecționează 3,5% din impozit.</p>
+        <p>Crește performanța! Redirecționează 3,5% din impozit.</p>
 
         <button class="buton-puls" onclick="deschideFormular()">
             COMPLETEAZĂ FORMULARUL 230
@@ -192,14 +164,8 @@
     </div>
 
     <script>
-        function deschideFormular() { 
-            document.getElementById('f230-overlay').style.display = 'flex'; 
-            document.body.style.overflow = 'hidden';
-        }
-        function inchideFormular() { 
-            document.getElementById('f230-overlay').style.display = 'none'; 
-            document.body.style.overflow = 'auto';
-        }
+        function deschideFormular() { document.getElementById('f230-overlay').style.display = 'flex'; }
+        function inchideFormular() { document.getElementById('f230-overlay').style.display = 'none'; }
         document.addEventListener('keydown', function(e) { if (e.key === "Escape") inchideFormular(); });
         document.getElementById('f230-overlay').addEventListener('click', function(e) { if (e.target === this) inchideFormular(); });
     </script>
