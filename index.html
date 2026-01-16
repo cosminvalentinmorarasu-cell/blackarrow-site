@@ -22,10 +22,10 @@
             font-family: 'Segoe UI', Roboto, Arial, sans-serif;
             display: flex;
             flex-direction: column;
-            height: 100vh; /* Forțăm înălțimea ecranului */
+            height: 100vh;
             margin: 0;
             text-align: center;
-            overflow: hidden; /* Eliminăm scroll-ul */
+            overflow: hidden;
         }
 
         .content {
@@ -34,19 +34,19 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 10px 20px;
+            padding: 2vh 20px; /* Padding vertical dinamic */
         }
 
         img.logo-main {
-            max-width: 20vh; 
-            height: auto;
+            height: 18vh; /* Înălțime fixă raportată la ecran */
+            width: auto;
             filter: drop-shadow(0 5px 15px rgba(0,0,0,0.6));
-            /* Spațiu mare pe desktop, se va micșora pe mobil prin media query */
-            margin-bottom: 40px; 
+            /* Spațiu sub logo care se adaptează: 5% din înălțimea ecranului */
+            margin-bottom: 5vh; 
         }
 
         h1 {
-            font-size: 1.5rem;
+            font-size: clamp(1.2rem, 4vh, 1.6rem); /* Dimensiune dinamică între 1.2 și 1.6 */
             margin: 0;
             line-height: 1.2;
             text-transform: uppercase;
@@ -58,20 +58,21 @@
         }
 
         p {
-            margin: 10px 0 20px 0;
+            margin: 2vh 0 4vh 0; /* Spațiu dinamic sus/jos */
             color: rgba(255, 255, 255, 0.7);
-            font-size: 1rem;
+            font-size: clamp(0.9rem, 2.5vh, 1.1rem);
             max-width: 400px;
+            line-height: 1.4;
         }
 
         .buton-puls {
             background-color: #ffcc00;
             color: #000;
-            padding: 15px 35px;
+            padding: 18px 40px;
             text-decoration: none;
             font-weight: 800;
             border-radius: 50px;
-            font-size: 0.9rem;
+            font-size: 1rem;
             border: none;
             cursor: pointer;
             box-shadow: 0 10px 20px rgba(0,0,0,0.3);
@@ -80,30 +81,18 @@
         }
 
         footer {
-            height: 50px;
-            font-size: 0.75rem;
+            height: 60px;
+            font-size: 0.8rem;
             color: rgba(255, 255, 255, 0.4);
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 12px;
-            padding-bottom: 5px;
+            gap: 15px;
+            padding-bottom: env(safe-area-inset-bottom); /* Respectă zona de gesturi pe iPhone */
         }
 
         footer a { color: rgba(255, 255, 255, 0.5); text-decoration: none; }
-        .fb-minimal { font-family: sans-serif; font-size: 1.1rem; font-weight: bold; }
-
-        /* REZOLVARE SCROLL PE MOBIL */
-        @media (max-width: 480px) or (max-height: 750px) {
-            img.logo-main { 
-                max-width: 15vh; 
-                margin-bottom: 15px; /* Reducem spațiul de sub logo pe mobil ca să ridicăm restul elementelor */
-            }
-            h1 { font-size: 1.2rem; }
-            p { font-size: 0.9rem; margin: 5px 0 15px 0; }
-            .buton-puls { padding: 12px 25px; font-size: 0.85rem; }
-            footer { height: 40px; font-size: 0.7rem; }
-        }
+        .fb-minimal { font-family: sans-serif; font-size: 1.2rem; font-weight: bold; }
 
         @keyframes pulse-animation {
             0% { box-shadow: 0 0 0 0 rgba(255, 204, 0, 0.6); }
@@ -111,6 +100,7 @@
             100% { box-shadow: 0 0 0 0 rgba(255, 204, 0, 0); }
         }
 
+        /* OVERLAY FORMULAR */
         #f230-overlay {
             display: none;
             position: fixed;
@@ -144,7 +134,8 @@
         <img src="logo2.png" alt="Logo Black Arrow" class="logo-main">
 
         <h1>ASOCIAȚIA CLUB SPORTIV<br><span class="highlight">BLACK ARROW BELCEȘTI</span></h1>
-        <p>Crește performanța!<br>Redirecționează 3,5% din impozit.</p>
+        
+        <p>Crește performanța campionilor!<br>Redirecționează 3,5% din impozit.</p>
 
         <button class="buton-puls" onclick="deschideFormular()">
             COMPLETEAZĂ FORMULARUL 230
