@@ -44,7 +44,6 @@
             font-size: 1.1rem;
         }
 
-        /* Butonul galben care palpează */
         .buton-puls {
             background-color: #ffcc00;
             color: #000;
@@ -61,10 +60,22 @@
             transition: transform 0.2s;
         }
 
-        .buton-puls:hover {
-            transform: scale(1.05);
-            background-color: #fff;
-            animation: none;
+        /* --- OPTIMIZARE PENTRU TELEFON (Samsung/Mobile) --- */
+        @media (max-width: 600px) {
+            img.logo-main {
+                max-width: 150px; /* Logo mai mic pe mobil */
+            }
+            h1 {
+                font-size: 1.5rem; /* Scris mai mic */
+            }
+            p {
+                font-size: 0.95rem;
+                padding: 0 10px;
+            }
+            .buton-puls {
+                padding: 15px 35px; /* Buton mai compact */
+                font-size: 1rem;
+            }
         }
 
         @keyframes pulse-animation {
@@ -73,21 +84,17 @@
             100% { box-shadow: 0 0 0 0 rgba(255, 204, 0, 0); }
         }
 
-        /* Fundalul pop-up-ului (Overlay) */
         #f230-overlay {
             display: none;
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
             background: rgba(0,0,0,0.95);
             z-index: 9999;
             justify-content: center;
             align-items: center;
         }
 
-        /* Containerul larg pentru formular */
         #f230-container {
             width: 95%;
             max-width: 1100px;
@@ -104,17 +111,14 @@
             border: none;
         }
 
-        /* Butonul X pentru închidere */
         .inchide-f230 {
             position: absolute;
-            top: 10px;
-            right: 20px;
+            top: 10px; right: 20px;
             font-size: 35px;
             color: #000;
             cursor: pointer;
             font-weight: bold;
             z-index: 10000;
-            line-height: 1;
         }
     </style>
 </head>
@@ -140,17 +144,12 @@
         function deschideFormular() {
             document.getElementById('f230-overlay').style.display = 'flex';
         }
-
         function inchideFormular() {
             document.getElementById('f230-overlay').style.display = 'none';
         }
-
-        // Închide pop-up-ul dacă se apasă tasta Escape
         document.addEventListener('keydown', function(e) {
             if (e.key === "Escape") inchideFormular();
         });
-
-        // Închide dacă se dă click pe fundalul negru, nu pe formular
         document.getElementById('f230-overlay').addEventListener('click', function(e) {
             if (e.target === this) inchideFormular();
         });
