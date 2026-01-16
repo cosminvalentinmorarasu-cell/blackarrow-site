@@ -10,21 +10,24 @@
     <style>
         * { box-sizing: border-box; }
 
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; 
+            background-color: #1a1a1a;
+        }
+
         body {
-            /* Fundalul: am inversat straturile pentru a ne asigura că poza e vizibilă sub gradient */
-            background: linear-gradient(rgba(26, 26, 26, 0.9), rgba(26, 26, 26, 0.9)), url('poza4.png');
+            background: linear-gradient(rgba(26, 26, 26, 0.92), rgba(26, 26, 26, 0.92)), url('poza4.png');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-color: #1a1a1a;
             
             color: #ffffff;
             font-family: 'Segoe UI', Roboto, Arial, sans-serif;
             display: flex;
             flex-direction: column;
-            min-height: 100vh;
-            margin: 0;
             text-align: center;
         }
 
@@ -33,38 +36,35 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            padding: 40px 20px;
+            justify-content: center; /* Centrare standard pentru Web */
+            padding: 20px;
+            gap: 20px; /* Spațiu controlat între elemente pe Web */
         }
 
         img.logo-main {
-            /* Logo-ul rămâne mare și impunător */
             height: 22vh;
-            max-height: 200px;
+            max-height: 220px;
             width: auto;
             filter: drop-shadow(0 5px 15px rgba(0,0,0,0.6));
-            /* Spațiu mare de aerisire sub logo */
-            margin-bottom: 40px; 
+            margin-bottom: 20px; /* Aerisirea sub logo */
         }
 
         h1 {
-            font-size: clamp(1.3rem, 5vw, 1.7rem);
+            font-size: clamp(1.4rem, 5vw, 1.8rem);
             margin: 0;
             line-height: 1.2;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
-        .highlight {
-            color: #ffcc00;
-        }
+        .highlight { color: #ffcc00; }
 
         p {
-            margin: 15px 0 25px 0;
-            color: rgba(255, 255, 255, 0.8);
-            font-size: clamp(1rem, 4vw, 1.1rem);
-            max-width: 400px;
-            line-height: 1.5;
+            margin: 5px 0 15px 0;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: clamp(1rem, 2.5vh, 1.1rem);
+            max-width: 450px;
+            line-height: 1.4;
         }
 
         .buton-puls {
@@ -83,19 +83,32 @@
         }
 
         footer {
-            height: 70px;
+            height: 60px;
             font-size: 0.8rem;
             color: rgba(255, 255, 255, 0.4);
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 15px;
-            /* Ne asigurăm că subsolul are spațiu să apară pe mobil */
-            padding-bottom: 20px;
+            flex-shrink: 0;
         }
 
         footer a { color: rgba(255, 255, 255, 0.5); text-decoration: none; }
         .fb-minimal { font-family: sans-serif; font-size: 1.2rem; font-weight: bold; }
+
+        /* AJUSTĂRI SPECIFICE PENTRU MOBIL */
+        @media (max-width: 768px) {
+            .content {
+                justify-content: space-around; /* Spațiere dinamică doar pe mobil */
+                gap: 0; 
+                padding: 10px 20px;
+            }
+            img.logo-main {
+                height: 20vh;
+                margin-bottom: 10px;
+            }
+            p { margin-bottom: 10px; }
+        }
 
         @keyframes pulse-animation {
             0% { box-shadow: 0 0 0 0 rgba(255, 204, 0, 0.6); }
@@ -103,37 +116,18 @@
             100% { box-shadow: 0 0 0 0 rgba(255, 204, 0, 0); }
         }
 
-        /* Pe ecrane scurte (mobile), micșorăm doar spațiul, nu logo-ul */
-        @media (max-height: 700px) {
-            .content { padding-top: 20px; justify-content: flex-start; }
-            img.logo-main { margin-bottom: 25px; }
-        }
-
+        /* Overlay */
         #f230-overlay {
-            display: none;
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: rgba(0,0,0,0.96);
-            z-index: 9999;
-            justify-content: center;
-            align-items: center;
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.96); z-index: 9999; justify-content: center; align-items: center;
             backdrop-filter: blur(10px);
         }
-
         #f230-container {
-            width: 95%; max-width: 1100px; height: 92vh;
-            background: #fff; border-radius: 15px;
+            width: 95%; max-width: 1100px; height: 92vh; background: #fff; border-radius: 15px;
             position: relative; overflow: hidden;
         }
-
         #f230-container iframe { width: 100%; height: 100%; border: none; }
-
-        .inchide-f230 {
-            position: absolute; top: 10px; right: 20px;
-            font-size: 35px; color: #000; cursor: pointer;
-            font-weight: bold; z-index: 10000;
-        }
+        .inchide-f230 { position: absolute; top: 10px; right: 20px; font-size: 35px; color: #000; cursor: pointer; font-weight: bold; z-index: 10000; }
     </style>
 </head>
 <body>
@@ -141,9 +135,10 @@
     <div class="content">
         <img src="logo2.png" alt="Logo Black Arrow" class="logo-main">
 
-        <h1>ASOCIAȚIA CLUB SPORTIV<br><span class="highlight">BLACK ARROW BELCEȘTI</span></h1>
-        
-        <p>Crește performanța!<br>Redirecționează 3,5% din impozit.</p>
+        <div class="text-group">
+            <h1>ASOCIAȚIA CLUB SPORTIV<br><span class="highlight">BLACK ARROW BELCEȘTI</span></h1>
+            <p>Crește performanța campionilor!<br>Redirecționează 3,5% din impozit.</p>
+        </div>
 
         <button class="buton-puls" onclick="deschideFormular()">
             COMPLETEAZĂ FORMULARUL 230
