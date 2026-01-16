@@ -11,6 +11,7 @@
         * { box-sizing: border-box; }
 
         body {
+            /* Fundal ajustat pentru incadrare mai buna */
             background: linear-gradient(rgba(26, 26, 26, 0.92), rgba(26, 26, 26, 0.92)), url('poza4.png');
             background-size: cover;
             background-position: center;
@@ -22,10 +23,9 @@
             font-family: 'Segoe UI', Roboto, Arial, sans-serif;
             display: flex;
             flex-direction: column;
-            height: 100vh; 
+            min-height: 100vh;
             margin: 0;
             text-align: center;
-            overflow: hidden; 
         }
 
         .content {
@@ -42,7 +42,7 @@
             max-width: 22vh; 
             height: auto;
             filter: drop-shadow(0 5px 15px rgba(0,0,0,0.6));
-            /* Adăugat spațiu generos sub logo */
+            /* Spațiu adăugat sub logo */
             margin-bottom: 40px; 
         }
 
@@ -59,11 +59,10 @@
         }
 
         p {
-            margin: 10px 0 25px 0;
+            margin: 5px 0 15px 0;
             color: rgba(255, 255, 255, 0.7);
-            font-size: 1.1rem;
-            max-width: 450px;
-            font-weight: 400;
+            font-size: 1rem;
+            max-width: 400px;
         }
 
         .buton-puls {
@@ -81,8 +80,9 @@
             transition: all 0.3s ease;
         }
 
+        /* SUBSOL REVENIT LA ORIGINAL */
         footer {
-            height: 60px; 
+            height: 60px;
             font-size: 0.8rem;
             color: rgba(255, 255, 255, 0.4);
             display: flex;
@@ -95,14 +95,15 @@
         footer a { color: rgba(255, 255, 255, 0.5); text-decoration: none; }
         .fb-minimal { font-family: sans-serif; font-size: 1.2rem; font-weight: bold; }
 
-        /* AJUSTĂRI PENTRU ECRANE MICI */
+        /* AJUSTĂRI MOBIL */
+        @media (max-width: 768px) {
+            body { background-attachment: scroll; } /* Rezolvă problemele de zoom pe mobil */
+        }
+
         @media (max-height: 700px) {
-            img.logo-main { 
-                max-width: 15vh; 
-                margin-bottom: 20px; /* Redus puțin pe ecrane mici pentru a păstra totul vizibil */
-            }
+            img.logo-main { max-width: 15vh; margin-bottom: 20px; }
             h1 { font-size: 1.3rem; }
-            p { font-size: 0.9rem; margin-bottom: 15px; }
+            p { font-size: 0.9rem; margin-bottom: 10px; }
             .buton-puls { padding: 12px 25px; font-size: 0.9rem; }
             .content { gap: 5px; }
         }
@@ -113,7 +114,6 @@
             100% { box-shadow: 0 0 0 0 rgba(255, 204, 0, 0); }
         }
 
-        /* OVERLAY FORMULAR */
         #f230-overlay {
             display: none;
             position: fixed;
@@ -147,8 +147,7 @@
         <img src="logo2.png" alt="Logo Black Arrow" class="logo-main">
 
         <h1>ASOCIAȚIA CLUB SPORTIV<br><span class="highlight">BLACK ARROW BELCEȘTI</span></h1>
-        
-        <p>Crește performanța campionilor!<br>Redirecționează 3,5% din impozit!</p>
+        <p>Crește performanța campionilor!<br>Redirecționează 3,5% din impozit.</p>
 
         <button class="buton-puls" onclick="deschideFormular()">
             COMPLETEAZĂ FORMULARUL 230
