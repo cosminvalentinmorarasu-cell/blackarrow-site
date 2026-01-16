@@ -10,28 +10,22 @@
     <style>
         * { box-sizing: border-box; }
 
-        html, body {
-            margin: 0;
-            padding: 0;
-            background-color: #1a1a1a;
-            height: 100%;
-        }
-
         body {
-            /* Schimbat la contain pentru a vedea imaginea completă, fără tăiere */
-            background: linear-gradient(rgba(26, 26, 26, 0.92), rgba(26, 26, 26, 0.92)), 
-                        url('poza4.png');
-            background-size: contain; 
+            /* Fundalul: am inversat straturile pentru a ne asigura că poza e vizibilă sub gradient */
+            background: linear-gradient(rgba(26, 26, 26, 0.9), rgba(26, 26, 26, 0.9)), url('poza4.png');
+            background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             background-attachment: fixed;
+            background-color: #1a1a1a;
             
             color: #ffffff;
             font-family: 'Segoe UI', Roboto, Arial, sans-serif;
             display: flex;
             flex-direction: column;
-            text-align: center;
             min-height: 100vh;
+            margin: 0;
+            text-align: center;
         }
 
         .content {
@@ -40,20 +34,21 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 20px;
+            padding: 40px 20px;
         }
 
         img.logo-main {
-            /* Logo mare conform cerinței */
-            height: 22vh; 
+            /* Logo-ul rămâne mare și impunător */
+            height: 22vh;
+            max-height: 200px;
             width: auto;
             filter: drop-shadow(0 5px 15px rgba(0,0,0,0.6));
-            /* Spațiu generos sub logo */
+            /* Spațiu mare de aerisire sub logo */
             margin-bottom: 40px; 
         }
 
         h1 {
-            font-size: clamp(1.3rem, 5vw, 1.8rem);
+            font-size: clamp(1.3rem, 5vw, 1.7rem);
             margin: 0;
             line-height: 1.2;
             text-transform: uppercase;
@@ -65,8 +60,8 @@
         }
 
         p {
-            margin: 15px 0 30px 0;
-            color: rgba(255, 255, 255, 0.7);
+            margin: 15px 0 25px 0;
+            color: rgba(255, 255, 255, 0.8);
             font-size: clamp(1rem, 4vw, 1.1rem);
             max-width: 400px;
             line-height: 1.5;
@@ -75,7 +70,7 @@
         .buton-puls {
             background-color: #ffcc00;
             color: #000;
-            padding: 16px 35px;
+            padding: 16px 40px;
             text-decoration: none;
             font-weight: 800;
             border-radius: 50px;
@@ -88,15 +83,15 @@
         }
 
         footer {
-            width: 100%;
-            height: 60px;
+            height: 70px;
             font-size: 0.8rem;
             color: rgba(255, 255, 255, 0.4);
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 15px;
-            padding-bottom: 10px;
+            /* Ne asigurăm că subsolul are spațiu să apară pe mobil */
+            padding-bottom: 20px;
         }
 
         footer a { color: rgba(255, 255, 255, 0.5); text-decoration: none; }
@@ -106,6 +101,12 @@
             0% { box-shadow: 0 0 0 0 rgba(255, 204, 0, 0.6); }
             70% { box-shadow: 0 0 0 15px rgba(255, 204, 0, 0); }
             100% { box-shadow: 0 0 0 0 rgba(255, 204, 0, 0); }
+        }
+
+        /* Pe ecrane scurte (mobile), micșorăm doar spațiul, nu logo-ul */
+        @media (max-height: 700px) {
+            .content { padding-top: 20px; justify-content: flex-start; }
+            img.logo-main { margin-bottom: 25px; }
         }
 
         #f230-overlay {
@@ -167,8 +168,6 @@
     <script>
         function deschideFormular() { document.getElementById('f230-overlay').style.display = 'flex'; }
         function inchideFormular() { document.getElementById('f230-overlay').style.display = 'none'; }
-        document.addEventListener('keydown', function(e) { if (e.key === "Escape") inchideFormular(); });
-        document.getElementById('f230-overlay').addEventListener('click', function(e) { if (e.target === this) inchideFormular(); });
     </script>
 
 </body>
