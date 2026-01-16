@@ -78,11 +78,11 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 12px;
+            gap: 15px;
         }
 
         footer a {
-            color: #bbb;
+            color: #888;
             text-decoration: none;
             transition: 0.3s;
         }
@@ -91,27 +91,18 @@
             color: #ffcc00;
         }
 
-        /* Logo Facebook clasic (minimalist) */
-        .fb-logo {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 18px;
-            height: 18px;
-            background-color: #bbb;
-            color: #1a1a1a !important;
-            border-radius: 50%;
+        /* Logo Facebook Minimalist */
+        .fb-minimal {
             font-family: sans-serif;
+            font-size: 1.2rem;
             font-weight: bold;
-            font-size: 14px;
+            color: #888 !important;
             line-height: 1;
-            padding-left: 2px;
             transition: 0.3s;
         }
 
-        .fb-logo:hover {
-            background-color: #1877F2;
-            color: #fff !important;
+        .fb-minimal:hover {
+            color: #1877F2 !important;
         }
 
         @media (max-width: 600px) {
@@ -119,7 +110,7 @@
             h1 { font-size: 1.4rem; }
             p { font-size: 0.9rem; padding: 0 15px; }
             .buton-puls { padding: 15px 30px; font-size: 1rem; }
-            footer { font-size: 0.75rem; gap: 8px; padding-bottom: 20px; }
+            footer { font-size: 0.75rem; gap: 10px; padding-bottom: 20px; }
         }
 
         @keyframes pulse-animation {
@@ -168,11 +159,11 @@
     </div>
 
     <footer>
-        <a href="mailto:contact@blackarrow.ro">contact@blackarrow.ro</a>
+        <a href="mailto:contact@blackarrow.ro">contact</a>
         <span>•</span>
-        <a href="https://www.facebook.com/blackarrowbelcesti" target="_blank" class="fb-logo" title="Facebook">f</a>
+        <a href="https://www.facebook.com/blackarrowbelcesti" target="_blank" class="fb-minimal">f</a>
         <span>•</span>
-        <span>© 2026 ACS Black Arrow</span>
+        <span>Black Arrow © 2026</span>
     </footer>
 
     <div id="f230-overlay">
@@ -191,4 +182,3 @@
 
 </body>
 </html>
-
