@@ -68,8 +68,24 @@
         <a href="javascript:void(0)" onclick="deschideFormular()">Formular 230</a>
         <a href="#contact">Contact</a>
       </nav>
+      <button class="hamburger-btn" onclick="toggleMobileMenu()" aria-label="Meniu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </header>
+
+  <div id="mobile-menu" class="mobile-nav-overlay">
+    <span class="close-mobile-menu" onclick="toggleMobileMenu()">&times;</span>
+    <a href="https://www.pentrustefanut.ro" target="_blank" rel="noopener" class="nav-stefanut" onclick="toggleMobileMenu()"><span class="pulse-dot"></span>Povestea lui Ștefănuț</a>
+    <a href="#about" onclick="toggleMobileMenu()">Despre noi</a>
+    <a href="#where" onclick="toggleMobileMenu()">Unde și când</a>
+    <a href="#training" onclick="toggleMobileMenu()">Antrenamente</a>
+    <a href="#events" onclick="toggleMobileMenu()">Noutăți</a>
+    <a href="javascript:void(0)" onclick="toggleMobileMenu(); deschideFormular();">Formular 230</a>
+    <a href="#contact" onclick="toggleMobileMenu()">Contact</a>
+  </div>
 
   <main>
     <section class="hero">
@@ -191,6 +207,10 @@
   <script>
     function deschideFormular() { document.getElementById('f230-overlay').style.display = 'flex'; }
     function inchideFormular() { document.getElementById('f230-overlay').style.display = 'none'; }
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+    }
   </script>
 
 </body>
