@@ -108,7 +108,6 @@ body {
   }
 }
 
-/* Stiluri Hamburger (ascuns pe desktop) */
 .hamburger-btn {
   display: none;
   background: none;
@@ -549,7 +548,7 @@ body {
   z-index: 10000;
 }
 
-/* Optimizare Mobil High-Performance (Proporții, Video & Meniu Hamburger) */
+/* Optimizare Mobil: Proporții Complete (Aspect Ratio) pentru imagini și video, fără tăieri */
 @media (max-width: 900px) {
   .header-container {
     padding: 12px 20px;
@@ -564,8 +563,8 @@ body {
     display: flex;
   }
   .hero {
-    height: 70vh;
-    min-height: 400px;
+    height: 60vh;
+    min-height: 350px;
   }
   .split-section {
     flex-direction: column;
@@ -574,13 +573,32 @@ body {
   .split-section.reverse {
     flex-direction: column;
   }
+  /* Transformăm imaginile și videoclipurile în format card complet (aspect-ratio 4:3) pe mobil */
   .split-image, .split-video-container {
-    min-height: 320px;
-    height: 45vh;
+    min-height: auto;
+    height: auto;
+    width: 90%;
+    margin: 24px auto 0 auto;
+    aspect-ratio: 4 / 3;
+    background-size: cover; /* umple cadrul complet al cardului proporțional */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+  }
+  .split-video-container {
+    position: relative;
+  }
+  .split-video {
+    position: relative;
+    top: 0;
+    left: 0;
     width: 100%;
+    height: 100%;
+    transform: none;
+    object-fit: cover;
   }
   .split-text {
-    padding: 50px 24px;
+    padding: 30px 24px 50px 24px;
     width: 100%;
     align-items: flex-start;
     text-align: left;
@@ -596,14 +614,14 @@ body {
     margin-bottom: 16px;
   }
   .events-section {
-    padding: 70px 20px;
+    padding: 60px 20px;
   }
   .events-section h2 {
     font-size: 2.2rem;
     margin-bottom: 30px;
   }
   .callout-section {
-    padding: 70px 20px;
+    padding: 60px 20px;
   }
   .callout-section h2 {
     font-size: 2.2rem;
