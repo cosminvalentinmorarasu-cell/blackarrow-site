@@ -4,17 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ACS Black Arrow Belcești | Club de Tir cu Arcul Iași</title>
-  <meta name="description" content="Asociația Club Sportiv Black Arrow Belcești - primul club de tir cu arcul din mediul rural al județului Iași, afiliat la Federația Română de Tir cu Arcul. Antrenamente pentru copii și tineri, pregătire indoor și outdoor. Redirecționează 3,5% din impozit prin Formularul 230.">
-  <meta name="keywords" content="tir cu arcul Iasi, club tir cu arcul, Black Arrow Belcesti, FRTA, Federatia Romana de Tir cu Arcul, antrenamente tir cu arcul, pregatire tir cu arcul, formular 230 tir cu arcul, sport Belcesti">
+  <meta name="description" content="Primul club de tir cu arcul din mediul rural al județului Iași, afiliat FRTA. Antrenamente pentru copii și tineri. Redirecționează 3,5% din impozit.">
   <meta name="author" content="ACS Black Arrow Belcești">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://blackarrow.ro/">
+  <link rel="alternate" hreflang="ro" href="https://blackarrow.ro/">
 
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://blackarrow.ro/">
   <meta property="og:title" content="ACS Black Arrow Belcești | Club de Tir cu Arcul Iași">
   <meta property="og:description" content="Primul club de tir cu arcul din mediul rural al județului Iași, afiliat FRTA. Antrenamente de inițiere și performanță pentru copii și tineri. Redirecționează 3,5% din impozit.">
   <meta property="og:image" content="https://blackarrow.ro/images/about.jpg">
+  <meta property="og:image:alt" content="Antrenamente de tir cu arcul la ACS Black Arrow Belcești">
   <meta property="og:site_name" content="ACS Black Arrow Belcești">
   <meta property="og:locale" content="ro_RO">
 
@@ -22,10 +23,11 @@
   <meta name="twitter:title" content="ACS Black Arrow Belcești | Club de Tir cu Arcul Iași">
   <meta name="twitter:description" content="Primul club de tir cu arcul din mediul rural al județului Iași, afiliat FRTA.">
   <meta name="twitter:image" content="https://blackarrow.ro/images/about.jpg">
+  <meta name="twitter:image:alt" content="Antrenamente de tir cu arcul la ACS Black Arrow Belcești">
 
   <meta name="theme-color" content="#0b0e14">
   <link rel="icon" type="image/png" href="favico.png?v=2">
-  <link rel="stylesheet" href="style.css?v=3">
+  <link rel="stylesheet" href="style.css?v=10">
   <script>document.documentElement.classList.add('js');</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,38 +36,89 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "SportsClub",
-    "name": "Asociația Club Sportiv Black Arrow Belcești",
-    "url": "https://blackarrow.ro/",
-    "logo": "https://blackarrow.ro/images/logo.png",
-    "image": "https://blackarrow.ro/images/about.jpg",
-    "description": "Primul club de tir cu arcul din mediul rural al județului Iași, afiliat la Federația Română de Tir cu Arcul.",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Belcești",
-      "addressRegion": "Iași",
-      "addressCountry": "RO"
-    },
-    "email": "contact@blackarrow.ro",
-    "sameAs": [
-      "https://www.facebook.com/blackarrowbelcesti"
+    "@graph": [
+      {
+        "@type": "SportsClub",
+        "@id": "https://blackarrow.ro/#club",
+        "name": "Asociația Club Sportiv Black Arrow Belcești",
+        "url": "https://blackarrow.ro/",
+        "logo": "https://blackarrow.ro/images/logo.png",
+        "image": "https://blackarrow.ro/images/about.jpg",
+        "description": "Primul club de tir cu arcul din mediul rural al județului Iași, afiliat la Federația Română de Tir cu Arcul.",
+        "sport": "Tir cu arcul",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Belcești",
+          "addressRegion": "Iași",
+          "addressCountry": "RO"
+        },
+        "email": "contact@blackarrow.ro",
+        "sameAs": [
+          "https://www.facebook.com/blackarrowbelcesti"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://blackarrow.ro/#website",
+        "url": "https://blackarrow.ro/",
+        "name": "ACS Black Arrow Belcești",
+        "inLanguage": "ro-RO",
+        "publisher": {
+          "@id": "https://blackarrow.ro/#club"
+        }
+      },
+      {
+        "@type": "SportsEvent",
+        "name": "Cupa Black Arrow X-Indoor – 10 ani de activitate",
+        "startDate": "2026-10-30",
+        "endDate": "2026-11-01",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "location": {
+          "@type": "Place",
+          "name": "Sala de Sport a Liceului Tehnologic „Victor Mihăilescu Craiu”",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Belcești",
+            "addressRegion": "Iași",
+            "addressCountry": "RO"
+          }
+        },
+        "image": [
+          "https://blackarrow.ro/images/event3.jpg"
+        ],
+        "description": "Competiție aniversară și eveniment de solidaritate dedicat lui Ștefănuț, arcașul clubului aflat în recuperare. Participarea este gratuită.",
+        "organizer": {
+          "@id": "https://blackarrow.ro/#club"
+        },
+        "offers": {
+          "@type": "Offer",
+          "url": "https://competitii.frta.ro/competitie/18/inscriere",
+          "price": "0",
+          "priceCurrency": "RON",
+          "availability": "https://schema.org/InStock"
+        }
+      }
     ]
   }
   </script>
 </head>
 <body>
 
+  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
   <header class="header">
     <div class="header-container">
       <a href="#" class="logo" aria-label="Acasă ACS Black Arrow Belcești">
-        <img src="images/logo.png" alt="Logo ACS Black Arrow Belcești">
+        <img src="images/logo.png" alt="Logo ACS Black Arrow Belcești" draggable="false">
       </a>
       <nav class="nav">
+        <a href="https://competitii.frta.ro/competitie/18/inscriere" target="_blank" rel="noopener" class="nav-inscrieri"><span class="ni-text"><b>Înscrieri Cupa Black Arrow 2026</b></span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
         <a href="https://www.pentrustefanut.ro" target="_blank" rel="noopener" class="nav-stefanut"><span class="pulse-dot"></span>Povestea lui Ștefănuț</a>
         <a href="#about">Despre noi</a>
         <a href="#where">Unde</a>
         <a href="#training">Antrenamente</a>
-        <a href="#events">Noutăți</a>
+        <a href="#events">Noutăți și rezultate</a>
         <a href="javascript:void(0)" onclick="deschideFormular()">Formular 230</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -83,20 +136,21 @@
     <a href="#about" onclick="toggleMobileMenu()">Despre noi</a>
     <a href="#where" onclick="toggleMobileMenu()">Unde</a>
     <a href="#training" onclick="toggleMobileMenu()">Antrenamente</a>
-    <a href="#events" onclick="toggleMobileMenu()">Noutăți</a>
+    <a href="#events" onclick="toggleMobileMenu()">Noutăți și rezultate</a>
     <a href="javascript:void(0)" onclick="toggleMobileMenu(); deschideFormular();">Formular 230</a>
     <a href="#contact" onclick="toggleMobileMenu()">Contact</a>
   </div>
 
   <main>
     <section class="hero">
-      <video autoplay loop muted playsinline class="hero-video">
+      <h1 class="sr-only">ACS Black Arrow Belcești — club de tir cu arcul din județul Iași</h1>
+      <video aria-hidden="true" autoplay loop muted playsinline disablepictureinpicture disableremoteplayback controlslist="nodownload noremoteplayback" oncontextmenu="return false" class="hero-video">
         <source src="images/hero-video.mp4" type="video/mp4">
       </video>
     </section>
 
     <section id="about" class="split-section dark-split">
-      <div class="split-image mobile-contain-media" style="background-image: url('images/about.jpg');" role="img" aria-label="Antrenamente tir cu arcul Black Arrow Belcești"></div>
+      <div class="split-image mobile-contain-media" role="img" aria-label="Antrenamente tir cu arcul Black Arrow Belcești"><div class="parallax-layer" style="background-image: url('images/about.jpg');"></div></div>
       <div class="split-text">
         <h2 class="slide-title">DESPRE NOI</h2>
         <div class="slide-body">
@@ -115,14 +169,14 @@
         </div>
       </div>
       <div class="split-video-container mobile-contain-media">
-        <video autoplay loop muted playsinline class="split-video">
+        <video aria-hidden="true" autoplay loop muted playsinline disablepictureinpicture disableremoteplayback controlslist="nodownload noremoteplayback" oncontextmenu="return false" class="split-video">
           <source src="images/location.mp4" type="video/mp4">
         </video>
       </div>
     </section>
 
     <section id="training" class="split-section red-split">
-      <div class="split-image mobile-contain-media" style="background-image: url('images/classes.jpg');" role="img" aria-label="Antrenamente și pregătire tir cu arcul"></div>
+      <div class="split-image mobile-contain-media" role="img" aria-label="Antrenamente și pregătire tir cu arcul"><div class="parallax-layer" style="background-image: url('images/classes.jpg');"></div></div>
       <div class="split-text">
         <h2 class="slide-title">ANTRENAMENTE</h2>
         <div class="slide-body">
@@ -133,43 +187,439 @@
     </section>
 
     <section id="events" class="events-section">
-      <h2>NOUTĂȚI & PERFORMANȚE</h2>
-      <div class="events-grid">
-        <article class="event-card">
-          <div class="card-img" style="background-image: url('images/event3.jpg');" role="img" aria-label="Cupa Black Arrow X-Indoor"></div>
-          <div class="card-content">
-            <h3>Cupa Black Arrow X-Indoor: 10 Ani de Activitate</h3>
-            <p>Competiție aniversară și eveniment de solidaritate organizat la Sala de Sport a Liceului Tehnologic „Victor Mihăilescu Craiu” din Belcești. Ediția este dedicată lui Ștefănuț, arcașul nostru aflat în recuperare. Participarea este gratuită; donațiile voluntare se pot face pe www.pentrustefanut.ro. Să tragem împreună pentru Ștefănuț!</p>
-            <div class="card-date-wrapper">
-              <span class="card-date">30 Octombrie – 1 Noiembrie 2026</span>
+      <div class="events-inner">
+        <h2>NOUTĂȚI ȘI REZULTATE</h2>
+
+        <article class="event-feature">
+          <div class="feature-media" id="feature-media">
+            <div class="feature-glow"></div>
+            <div class="feature-frame" role="img" aria-label="Cupa Black Arrow X-Indoor">
+              <div class="feature-image" style="background-image: url('images/event3.jpg');"></div>
+              <span class="feature-shine"></span>
             </div>
-            <div style="margin-top: 16px; text-align: center;">
-              <a href="https://competitii.frta.ro/competitie/18/inscriere" target="_blank" rel="noopener" class="btn btn-light btn-pulse-light" style="padding: 10px 24px; font-size: 0.8rem;">LINK ÎNSCRIERE COMPETIȚIE</a>
+          </div>
+          <div class="feature-body">
+            <span class="feature-kicker">Eveniment aniversar · 10 ani de activitate</span>
+            <div class="feature-date">30 OCT – 1 NOV 2026</div>
+            <h3>Cupa Black Arrow X-Indoor</h3>
+            <p>Competiție aniversară și eveniment de solidaritate, organizat la Sala de Sport a Liceului Tehnologic „Victor Mihăilescu Craiu” din Belcești. Ediția este dedicată lui Ștefănuț, arcașul nostru aflat în recuperare. Participarea este gratuită; donațiile voluntare se pot face pe www.pentrustefanut.ro.</p>
+            <p class="feature-tagline">Să tragem împreună pentru Ștefănuț!</p>
+            <div class="feature-actions">
+              <a href="https://competitii.frta.ro/competitie/18/inscriere" target="_blank" rel="noopener" class="btn btn-light btn-pulse-light">Înscrieri competiție</a>
+              <a href="https://www.pentrustefanut.ro" target="_blank" rel="noopener" class="btn btn-outline">Donează pentru Ștefănuț</a>
             </div>
           </div>
         </article>
-        <article class="event-card">
-          <div class="card-img" style="background-image: url('images/event1.jpg');" role="img" aria-label="Campionatul Național Outdoor Petroșani U21, Seniori, Master"></div>
-          <div class="card-content">
-            <h3>Campionat Național Outdoor — Petroșani (U21, Seniori, Master)</h3>
-            <p>Participare excelentă la competiția organizată la Petroșani. Arcașii noștri au obținut rezultate remarcabile: Locul 1 Echipe Compound U21W (Biliuță Iulia, Ciocan Bianca, Didică Măriuca), Locul 2 individual Biliuță Iulia (Compound U21W) și Buruiană Iannis (Barebow U21M), precum și Locul 3 individual pentru Didică Măriuca.</p>
-            <div class="card-date-wrapper">
-              <span class="card-date">18-20 Septembrie 2026</span>
-            </div>
+
+        <h3 class="results-title">Rezultate</h3>
+        <div class="results-list">
+            <details class="result-row">
+              <summary>
+                <span class="result-date">18–20 SEP 2026</span>
+                <span class="result-name">Campionat Național Outdoor — Petroșani <small>R/C/BB, U21, Seniori, Master</small></span>
+                <span class="result-chips"></span>
+                <span class="result-toggle" aria-hidden="true"></span>
+              </summary>
+              <div class="result-detail">
+                <div class="result-photo" data-photo="images/event1.jpg" role="img" aria-label="Campionat Național Outdoor — Petroșani, 18–20 sep 2026"></div>
+                <dl>
+                  <dt>LOCUL I</dt><dd>Biliuță Iulia (CU21W) · Buruiană Ianis (BBU21M)</dd>
+                  <dt>LOCUL II</dt><dd>Didică Măriuca (CU21W)</dd>
+                  <dt>LOCUL I ECHIPE</dt><dd>CU21W: Biliuță Iulia, Ciocan Bianca, Didică Măriuca</dd>
+                </dl>
+              </div>
+            </details>
+            <details class="result-row">
+              <summary>
+                <span class="result-date">12–14 IUN 2026</span>
+                <span class="result-name">Campionat Național Outdoor — Oradea <small>R/C/BB, U18, U15, U13</small></span>
+                <span class="result-chips"><span class="chip chip-solid">Record național</span></span>
+                <span class="result-toggle" aria-hidden="true"></span>
+              </summary>
+              <div class="result-detail">
+                <div class="result-photo" data-photo="images/event2.jpg" role="img" aria-label="Campionat Național Outdoor — Oradea, 12–14 iun 2026"></div>
+                <dl>
+                  <dt>LOCUL I</dt><dd>Biliuță Iulia (CU15W) · Ciocan Daniela (BBU15W) · Marciuc Ana-Maria (BBU13W)</dd>
+                  <dt>LOCUL II</dt><dd>Buruiană Ianis (BBU15M) · Florariu Iustinian (CU15M)</dd>
+                  <dt>LOCUL III</dt><dd>Didică Măriuca (CU18W)</dd>
+                  <dt>LOCUL I ECHIPE MIXTE</dt><dd>BBU15: Buruiană Ianis / Ciocan Daniela</dd>
+                  <dt>LOCUL II ECHIPE MIXTE</dt><dd>CU15: Biliuță Iulia / Florariu Iustinian</dd>
+                  <dt>Poziția 4</dt><dd>Ciocan Bianca (CU18W) · Stamboală Rareș (CU13M)</dd>
+                  <dt>Record</dt><dd>Ciocan Daniela și Buruiană Ianis — nou Record Național la divizia Barebow echipe mixte</dd>
+                </dl>
+              </div>
+            </details>
+            <details class="result-row">
+              <summary>
+                <span class="result-date">28–31 MAI 2026</span>
+                <span class="result-name">Cupa Casei Regale — Vama Buzăului <small>Outdoor, Ediția a VI-a, R/C/BB, toate categoriile de vârstă (m&f)</small></span>
+                <span class="result-chips"><span class="chip">Locul 2 pe cluburi</span></span>
+                <span class="result-toggle" aria-hidden="true"></span>
+              </summary>
+              <div class="result-detail">
+                <div class="result-photo" data-photo="images/rez-cupa-casei-regale-2026.jpg" role="img" aria-label="Cupa Casei Regale — Vama Buzăului, 28–31 mai 2026"></div>
+                <dl>
+                  <dt>Clasament pe Cluburi</dt><dd>LOCUL II</dd>
+                  <dt>LOCUL I</dt><dd>Ciocan Bianca (CU18W) · Ciocan Daniela (BBU15W) · Biliuță Iulia (CU15W) · Marciuc Ana-Maria (RU13W) · Buruiană Ianis (BBU15M) · Florariu Iustinian (CU15M)</dd>
+                  <dt>LOCUL II</dt><dd>Galben Carla (RU15W) · Albu Theodor (CU13M) · Marginaru David (RU13M)</dd>
+                  <dt>LOCUL III</dt><dd>Stamboală Rareș (CU13M) · Didică Măriuca (CU18W)</dd>
+                  <dt>LOCUL I ECHIPE MIXTE</dt><dd>BBU15: Ciocan Daniela / Buruiană Ianis · CU15: Biliuță Iulia / Florariu Iustinian</dd>
+                  <dt>Poziția 4</dt><dd>Florescu Maria-Magdalena (RU15W) · Ciobanu Ana-Maria (BBU15W)</dd>
+                </dl>
+              </div>
+            </details>
+            <details class="result-row">
+              <summary>
+                <span class="result-date">13–15 FEB 2026</span>
+                <span class="result-name">Campionat Național Indoor — Rădăuți <small>R/C/BB, U18, U15, U13</small></span>
+                <span class="result-chips"></span>
+                <span class="result-toggle" aria-hidden="true"></span>
+              </summary>
+              <div class="result-detail">
+                <div class="result-photo" data-photo="images/rez-cn-indoor-2026.jpg" role="img" aria-label="Campionat Național Indoor — Rădăuți, 13–15 feb 2026"></div>
+                <dl>
+                  <dt>LOCUL I</dt><dd>Biliuță Iulia (CU15W și BBU15W)</dd>
+                  <dt>LOCUL II</dt><dd>Buruiană Ianis (BBU15M) · Ciocan Daniela (BBU15W)</dd>
+                  <dt>LOCUL III</dt><dd>Latu Elisa (RU15W) · Ciobanu Ana-Maria (BBU15W)</dd>
+                  <dt>LOCUL I ECHIPE MIXTE</dt><dd>BBU15: Biliuță Iulia / Buruiană Ianis</dd>
+                  <dt>LOCUL I ECHIPE</dt><dd>RU15W: Latu Elisa, Galben Carla, Florescu Magda · BBU15W: Biliuță Iulia, Ciocan Daniela, Ciobanu Ana-Maria</dd>
+                </dl>
+              </div>
+            </details>
+            <details class="result-row">
+              <summary>
+                <span class="result-date">18–20 IUL 2025</span>
+                <span class="result-name">Campionat Național Outdoor — Oradea <small>R/C/BB, U18, U15, U13</small></span>
+                <span class="result-chips"></span>
+                <span class="result-toggle" aria-hidden="true"></span>
+              </summary>
+              <div class="result-detail">
+                <div class="result-photo" data-photo="images/rez-cn-outdoor-2025.jpg" role="img" aria-label="Campionat Național Outdoor — Oradea, 18–20 iul 2025"></div>
+                <dl>
+                  <dt>LOCUL II</dt><dd>Buruiană Ianis (BBU15M) · Chelea David (CU13M)</dd>
+                  <dt>LOCUL I ECHIPE</dt><dd>RU15W: Latu Elisa, Munteanu Evelina, Galben Carla · BBU15M: Buruiană Ianis, Chelea Mario, Chelea Dragoș · BBU13W: Tihulcă Ana-Maria</dd>
+                  <dt>Poziția 4</dt><dd>Galben Carla (RU15W) · Chelea Dragoș (BBU15M)</dd>
+                </dl>
+              </div>
+            </details>
           </div>
-        </article>
-        <article class="event-card">
-          <div class="card-img" style="background-image: url('images/event2.jpg');" role="img" aria-label="Campionatul Național Outdoor Oradea U18, U15, U13"></div>
-          <div class="card-content">
-            <h3>Campionat Național Outdoor — Oradea (U18, U15, U13)</h3>
-            <p>Rezultate notabile obținute de micii noștri arcași: Locul 1 pentru Biliuță Iulia, Ciocan Daniela, Marciuc Ana-Maria și echipa mixtă barebow (Buruiană Iannis / Ciocan Daniela). Locul 2 pentru Buruiană Iannis, Florariu Iustinian și echipa mixtă compound. Locul 3 pentru Măriuca Didică, iar Ciocan Daniela și Buruiană Iannis au stabilit un nou Record Național la divizia arc barebow echipe mixte!</p>
-            <div class="card-date-wrapper">
-              <span class="card-date">12-14 Iunie 2026</span>
+
+          <details class="results-archive">
+            <summary class="archive-toggle"><span>Rezultate anterioare</span><span class="archive-count">2025–2020</span><span class="archive-icon" aria-hidden="true"></span></summary>
+            <div class="archive-body">
+            <h4 class="year-label">2025</h4>
+            <div class="results-list">
+            <details class="result-row">
+              <summary>
+                <span class="result-date">23–25 MAI 2025</span>
+                <span class="result-name">Cupa Casei Regale — Predeal <small>Outdoor, Ediția a V-a, R/C/BB, toate categoriile de vârstă (m&f)</small></span>
+                <span class="result-chips"><span class="chip">Locul 1 pe cluburi</span></span>
+                <span class="result-toggle" aria-hidden="true"></span>
+              </summary>
+              <div class="result-detail">
+                <div class="result-photo" data-photo="images/rez-cupa-casei-regale-2025.jpg" role="img" aria-label="Cupa Casei Regale — Predeal, 23–25 mai 2025"></div>
+                <dl>
+                  <dt>Clasament pe Cluburi</dt><dd>LOCUL I</dd>
+                  <dt>LOCUL I</dt><dd>Latu Elissa-Maria (RU13W) · Vezătiu Aura-Gabriela (CU13W) · Munteanu Damian-Ioan (CU15M) · Biliuța Iulia-Mihaela (CU15W) · Florescu Cosmin Stefanut (CU18M)</dd>
+                  <dt>LOCUL II</dt><dd>Tihulcă Ana-Maria (BBU13W) · Chelea David-Gabriel (CU13M) · Chelea Mario-Andrei (BBU15M) · Iliana Octavian Dumitru (RU15M) · Chelea Ioan-Dragoș (CU15M)</dd>
+                  <dt>LOCUL III</dt><dd>Florescu Larisa-Anastasia (RU13W) · Masiero Valentino (BBU15M)</dd>
+                  <dt>Poziția 4</dt><dd>Albu Theodor (CU13M) · Munteanu Evelina-Ionela (RU13W)</dd>
+                  <dt>Poziția 5</dt><dd>Buruiană Ianis (BBU15M) · Prihor Andra-Elena (RU15W)</dd>
+                </dl>
+              </div>
+            </details>
+            <details class="result-row">
+              <summary>
+                <span class="result-date">25–27 APR 2025</span>
+                <span class="result-name">Cupa Federației Outdoor — București <small>R/C/BB, toate categoriile de vârstă (m&f)</small></span>
+                <span class="result-chips"><span class="chip">Locul 1 pe cluburi</span></span>
+                <span class="result-toggle" aria-hidden="true"></span>
+              </summary>
+              <div class="result-detail">
+                <div class="result-photo" data-photo="images/rez-cupa-federatiei-2025.jpg" role="img" aria-label="Cupa Federației Outdoor, 25–27 apr 2025"></div>
+                <dl>
+                  <dt>Clasament pe Cluburi</dt><dd>LOCUL I</dd>
+                  <dt>LOCUL I</dt><dd>Biliuță Iulia (CU15W) · Chelea David (CU13M) · Vezătiu Aura (CU13W) · Tihulcă Ana-Maria (BBU13W) · Buruiană Ianis (BBU15M) · Iliană Octavian (RU15M) · Munteanu Damian (CU15M) · Florescu Ștefănuț (CU18M)</dd>
+                  <dt>LOCUL II</dt><dd>Latu Elisa (RU13W) · Masiero Valentino (BBU15M) · Prihor Andra (RU15W) · Chelea Dragoș (CU15M)</dd>
+                  <dt>LOCUL III</dt><dd>Florescu Larisa (RU13W) · Chelea Mario (BBU15M)</dd>
+                  <dt>LOCUL I ECHIPE</dt><dd>RU13W: Munteanu Evelina, Latu Elisa, Florescu Larisa</dd>
+                  <dt>LOCUL I ECHIPE MIXTE</dt><dd>CU13: Vezătiu Aura / Chelea David · RU15: Prihor Andra / Iliană Octavian · CU15: Biliuță Iulia / Munteanu Damian</dd>
+                  <dt>Poziția 4</dt><dd>Munteanu Evelina (RU13W)</dd>
+                </dl>
+              </div>
+            </details>
+            <details class="result-row">
+              <summary>
+                <span class="result-date">27 FEB – 1 MAR 2025</span>
+                <span class="result-name">Campionat Național Indoor — Rădăuți <small>R/C/BB, U18, U15, U13</small></span>
+                <span class="result-chips"></span>
+                <span class="result-toggle" aria-hidden="true"></span>
+              </summary>
+              <div class="result-detail">
+                <div class="result-photo" data-photo="images/rez-cn-indoor-2025.jpg" role="img" aria-label="Campionat Național Indoor — Rădăuți, 27 feb – 1 mar 2025"></div>
+                <dl>
+                  <dt>LOCUL I</dt><dd>Chelea Mario (CU15M) · Chelea Dragoș (CU15M)</dd>
+                  <dt>LOCUL II</dt><dd>Buruiană Ianis (CU15M) · Biliuță Iulia (BBU15W și CU15W) · Florescu Larisa (CU13W) · Florescu Ștefănuț (CU18M)</dd>
+                  <dt>LOCUL III</dt><dd>Masiero Valentino (BBU15M) · Vezătiu Aura (BBU15W)</dd>
+                  <dt>LOCUL I ECHIPE</dt><dd>BBU15: Chelea Mario, Vezătiu Aura, Munteanu Damian, Biliuță Iulia, Masiero Valentino · BBU13W: Tihulcă Ana-Maria</dd>
+                  <dt>LOCUL I ECHIPE MIXTE</dt><dd>Chelea Mario, Vezătiu Aura, Chelea Dragoș, Biliuță Iulia</dd>
+                  <dt>Poziția 4</dt><dd>Tihulcă Ana-Maria (BBU13W) · Latu Elisa (RU13W)</dd>
+                  <dt>Poziția 6</dt><dd>Munteanu Evelina (RU13W)</dd>
+                </dl>
+              </div>
+            </details>
             </div>
-          </div>
-        </article>
+            <h4 class="year-label">2024</h4>
+            <div class="results-list">
+            <details class="result-row">
+              <summary>
+                <span class="result-date">26–28 APR 2024</span>
+                <span class="result-name">Cupa Federației Outdoor — București <small>R/C/BB, toate categoriile de vârstă (m&f)</small></span>
+                <span class="result-chips"><span class="chip">Locul 1 pe cluburi</span></span>
+                <span class="result-toggle" aria-hidden="true"></span>
+              </summary>
+              <div class="result-detail">
+                <div class="result-photo" data-photo="images/rez-cupa-federatiei-2024.jpg" role="img" aria-label="Cupa Federației Outdoor — București, 26–28 apr 2024"></div>
+                <dl>
+                  <dt>Clasament pe Cluburi</dt><dd>LOCUL I</dd>
+                  <dt>LOCUL I</dt><dd>Biliuță Iulia (CU13W) · Buruiană Ianis (CU13M) · Chelea David (RU13M) · Gherman Andra (RU13W) · Munteanu Damian (BBU13M)</dd>
+                  <dt>LOCUL II</dt><dd>Chelea Dragoș (CU13M) · Florescu Larisa (RU13W) · Gheban Liliana (CU18W) · Huțanu Gabriel (RU21M)</dd>
+                  <dt>LOCUL III</dt><dd>Florescu Ștefănuț (CU18M) · Masiero Valentino (RU15M) · Tihulcă Ana-Maria (RU13W)</dd>
+                  <dt>Poziția 4</dt><dd>Iliană Octavian (RU15M)</dd>
+                  <dt>Poziția 5</dt><dd>Chelea Mario (RU15M)</dd>
+                </dl>
+              </div>
+            </details>
+            <details class="result-row">
+              <summary>
+                <span class="result-date">8–10 MAR 2024</span>
+                <span class="result-name">Campionat Național Indoor — Iași <small>R/C/BB, U18, U15, U13</small></span>
+                <span class="result-chips"></span>
+                <span class="result-toggle" aria-hidden="true"></span>
+              </summary>
+              <div class="result-detail">
+                <div class="result-photo" data-photo="images/rez-cn-2024.jpg" role="img" aria-label="Campionat Național — Iași, 8–10 mar 2024"></div>
+                <dl>
+                  <dt>LOCUL I</dt><dd>Florescu Larisa (RU13W)</dd>
+                  <dt>LOCUL II</dt><dd>Vezătiu Aura (CU13W)</dd>
+                  <dt>LOCUL III</dt><dd>Tihulcă Ana-Maria (RU13W) · Gherman Andra (RU13W) · Buruiană Ianis (CU13M)</dd>
+                  <dt>Poziția 5</dt><dd>Florescu Ștefănuț (CU18M)</dd>
+                  <dt>Poziția 7</dt><dd>Masiero Valentino (RU15M)</dd>
+                  <dt>Poziția 8</dt><dd>Iliană Octavian (RU15M)</dd>
+                </dl>
+              </div>
+            </details>
+            </div>
+            <h4 class="year-label">2023</h4>
+            <div class="results-list">
+            <details class="result-row">
+              <summary>
+                <span class="result-date">28–30 APR 2023</span>
+                <span class="result-name">Cupa Primăverii Outdoor — București <small>R/C/BB, toate categoriile de vârstă (m&f)</small></span>
+                <span class="result-chips"><span class="chip">Locul 2 pe cluburi</span></span>
+                <span class="result-toggle" aria-hidden="true"></span>
+              </summary>
+              <div class="result-detail">
+                <div class="result-photo" data-photo="images/rez-cupa-primaverii-2023.jpg" role="img" aria-label="Cupa Primăverii — București, 28–30 apr 2023"></div>
+                <dl>
+                  <dt>Clasament pe Cluburi</dt><dd>LOCUL II</dd>
+                  <dt>LOCUL I</dt><dd>Buruiană Ianis (CU13M) · Ciobaniță Adelina (CU15W) · Masiero Valentino (RU13M) · Huțanu Gabriel (RU18M)</dd>
+                  <dt>LOCUL II</dt><dd>Iliană Octavian (RU13M)</dd>
+                  <dt>LOCUL III</dt><dd>Didică Măriuca (RU15W) · Florescu Ștefănuț (RU18M)</dd>
+                  <dt>Poziția 4</dt><dd>Melenciuc Adelina (RU15W)</dd>
+                </dl>
+              </div>
+            </details>
+            <details class="result-row">
+              <summary>
+                <span class="result-date">3–5 MAR 2023</span>
+                <span class="result-name">Campionat Național Indoor — Iași <small>R/C/BB, U18, U15, U13</small></span>
+                <span class="result-chips"></span>
+                <span class="result-toggle" aria-hidden="true"></span>
+              </summary>
+              <div class="result-detail">
+                <div class="result-photo" data-photo="images/rez-cn-indoor-2023.jpg" role="img" aria-label="Campionat Național Indoor — Iași, 3–5 mar 2023"></div>
+                <dl>
+                  <dt>LOCUL II</dt><dd>Buruiană Ianis (CU15M)</dd>
+                  <dt>LOCUL III</dt><dd>Masiero Valentino (RU13M)</dd>
+                  <dt>LOCUL III ECHIPE MIXTE</dt><dd>RU18: Gheban Liliana / Florescu Ștefănuț</dd>
+                  <dt>Poziția 7</dt><dd>Iliană Octavian (RU13M)</dd>
+                </dl>
+              </div>
+            </details>
+            </div>
+            <h4 class="year-label">2022</h4>
+            <div class="results-list">
+            <details class="result-row">
+              <summary>
+                <span class="result-date">8–10 IUL 2022</span>
+                <span class="result-name">Campionat Național Outdoor — Ploiești <small>R/C/BB, U18, U15, U13</small></span>
+                <span class="result-chips"></span>
+                <span class="result-toggle" aria-hidden="true"></span>
+              </summary>
+              <div class="result-detail">
+                <div class="result-photo" data-photo="images/rez-cn-outdoor-2022.jpg" role="img" aria-label="Campionat Național Outdoor — Ploiești, 8–10 iul 2022"></div>
+                <dl>
+                  <dt>LOCUL I</dt><dd>Gheban Liliana (RU15W)</dd>
+                  <dt>LOCUL II</dt><dd>Florescu Ștefănuț (RU15M) · Cotan Larisa (RU13W) · Gănescu Alessia (CU13W)</dd>
+                  <dt>LOCUL I ECHIPE MIXTE</dt><dd>RU15: Florescu Ștefănuț / Gheban Liliana</dd>
+                  <dt>Poziția 4</dt><dd>Buruiană Ianis (CU13M)</dd>
+                </dl>
+              </div>
+            </details>
+            <details class="result-row">
+              <summary>
+                <span class="result-date">27–29 MAI 2022</span>
+                <span class="result-name">Cupa Casei Regale — Predeal <small>Outdoor, Ediția a II-a, R/C/BB, toate categoriile de vârstă (m&f)</small></span>
+                <span class="result-chips"><span class="chip">Locul 2 pe cluburi</span></span>
+                <span class="result-toggle" aria-hidden="true"></span>
+              </summary>
+              <div class="result-detail">
+                <div class="result-photo" data-photo="images/rez-cupa-casei-regale-2022.jpg" role="img" aria-label="Cupa Casei Regale — Predeal, 27–29 mai 2022"></div>
+                <dl>
+                  <dt>Clasament pe Cluburi</dt><dd>LOCUL II</dd>
+                  <dt>LOCUL I</dt><dd>Borhan Adrian (BBU18M) · Ciocan Vlad (RU21M) · Florescu Ștefănuț (RU15M)</dd>
+                  <dt>LOCUL II</dt><dd>Ciocan Vlad (CU21M) · Gănescu Alessia (RU13W) · Florescu Ștefănuț (CU15M)</dd>
+                  <dt>LOCUL III</dt><dd>Buruiană Ianis (RU13M)</dd>
+                  <dt>Poziția 4</dt><dd>Buruiană Ianis (CU13M) · Cotan Larisa (RU13W)</dd>
+                </dl>
+              </div>
+            </details>
+            <details class="result-row">
+              <summary>
+                <span class="result-date">17–19 MAR 2022</span>
+                <span class="result-name">Campionat Național Indoor — Iași <small>R/C/BB, U18, U15, U13</small></span>
+                <span class="result-chips"></span>
+                <span class="result-toggle" aria-hidden="true"></span>
+              </summary>
+              <div class="result-detail">
+                <div class="result-photo" data-photo="images/rez-cn-indoor-2022.jpg" role="img" aria-label="Campionat Național Indoor — Iași, 17–19 mar 2022"></div>
+                <dl>
+                  <dt>LOCUL II</dt><dd>Huțanu Gabriel (RU18M) · Gheban Liliana (RU21W)</dd>
+                  <dt>LOCUL III</dt><dd>Florescu Ștefănuț (RU18M)</dd>
+                  <dt>LOCUL II ECHIPE</dt><dd>CU18M: Buruiană Dario, Borhan Adrian, Petcu Alin</dd>
+                  <dt>Poziția 5</dt><dd>Cotan Larisa (RU13W)</dd>
+                  <dt>Poziția 6</dt><dd>Gănescu Alessia (RU13W)</dd>
+                </dl>
+              </div>
+            </details>
+            </div>
+            <h4 class="year-label">2021</h4>
+            <div class="results-list">
+            <details class="result-row">
+              <summary>
+                <span class="result-date">14–16 MAI 2021</span>
+                <span class="result-name">Cupa Casei Regale — Predeal <small>Outdoor, Ediția I, R/C/BB, toate categoriile de vârstă (m&f)</small></span>
+                <span class="result-chips"><span class="chip">Locul 1 pe cluburi</span></span>
+                <span class="result-toggle" aria-hidden="true"></span>
+              </summary>
+              <div class="result-detail">
+                <div class="result-photo" data-photo="images/rez-cupa-casei-regale-2021.jpg" role="img" aria-label="Cupa Casei Regale — Predeal, 14–16 mai 2021"></div>
+                <dl>
+                  <dt>Clasament pe Cluburi</dt><dd>LOCUL I</dd>
+                  <dt>LOCUL I</dt><dd>Albu Ștefana (CU21W) · Andronic Vasilica (BBU21W) · Avăcăriței Claudia (CU18W) · Borhan Adrian (RU21M) · Ciocan Vlad (BBU18M)</dd>
+                  <dt>LOCUL II</dt><dd>Ciocan Vlad (CU18M) · Huțanu Gabriel (RU18M)</dd>
+                </dl>
+              </div>
+            </details>
+            <details class="result-row">
+              <summary>
+                <span class="result-date">26–28 MAR 2021</span>
+                <span class="result-name">Cupa Federației Outdoor — București <small>R/C/BB, toate categoriile de vârstă (m&f)</small></span>
+                <span class="result-chips"></span>
+                <span class="result-toggle" aria-hidden="true"></span>
+              </summary>
+              <div class="result-detail">
+                <div class="result-photo" data-photo="images/rez-cupa-federatiei-2021.jpg" role="img" aria-label="Cupa Federației Outdoor — București, 26–28 mar 2021"></div>
+                <dl>
+                  <dt>LOCUL I</dt><dd>Albu Ștefana (CU21W)</dd>
+                  <dt>LOCUL II</dt><dd>Huțanu Gabriel (RU18M)</dd>
+                  <dt>Poziția 5</dt><dd>Ciocan Vlad (RU18M)</dd>
+                </dl>
+              </div>
+            </details>
+            </div>
+            <h4 class="year-label">2020</h4>
+            <div class="results-list">
+            <details class="result-row">
+              <summary>
+                <span class="result-date">24–26 IUL 2020</span>
+                <span class="result-name">Campionat Național Outdoor — Iași <small>R/C/BB, U18, U15, U13</small></span>
+                <span class="result-chips"><span class="chip chip-solid">Record național</span></span>
+                <span class="result-toggle" aria-hidden="true"></span>
+              </summary>
+              <div class="result-detail">
+                <div class="result-photo" data-photo="images/rez-cn-outdoor-2020.jpg" role="img" aria-label="Campionat Național Outdoor — Iași, 24–26 iul 2020"></div>
+                <dl>
+                  <dt>LOCUL I</dt><dd>Andrei Codrin (BBU18M) · Albu Ștefana (CU18W)</dd>
+                  <dt>LOCUL II</dt><dd>Andronic Vasilica (BBU18W)</dd>
+                  <dt>LOCUL III</dt><dd>Huțanu Gabriel (RU15M)</dd>
+                  <dt>LOCUL I ECHIPE</dt><dd>CU18W: Albu Ștefana, Avăcăriței Claudia, Șerban Erica</dd>
+                  <dt>LOCUL II ECHIPE MIXTE</dt><dd>RU18: Ciocan Vlad, Frai Timeea</dd>
+                  <dt>Record</dt><dd>Albu Ștefana — două noi Recorduri Naționale: 667 puncte (calificări) și 142 puncte (meci direct 15 săgeți)</dd>
+                </dl>
+              </div>
+            </details>
+            <details class="result-row">
+              <summary>
+                <span class="result-date">14–16 FEB 2020</span>
+                <span class="result-name">Campionat Național Indoor — Deva <small>R/C/BB, U18, U15, U13</small></span>
+                <span class="result-chips"></span>
+                <span class="result-toggle" aria-hidden="true"></span>
+              </summary>
+              <div class="result-detail">
+                <div class="result-photo" data-photo="images/rez-cn-indoor-deva-2020.jpg" role="img" aria-label="Campionat Național Indoor — Deva, 14–16 feb 2020"></div>
+                <dl>
+                  <dt>LOCUL I</dt><dd>Andrei Codrin (BBU18M) · Albu Ștefana (CU18W)</dd>
+                  <dt>LOCUL II</dt><dd>Huțanu Gabriel (RU15M)</dd>
+                  <dt>LOCUL III</dt><dd>Ciobanu Alex (CU18W / CU18M)</dd>
+                  <dt>LOCUL III ECHIPE</dt><dd>RU18M: Andrei Codrin, Ciocan Vlad, Huțanu Gabriel</dd>
+                  <dt>LOCUL III ECHIPE MIXTE</dt><dd>CU18: Avăcăriței Claudia, Ciobanu Alex · RU18: Ciocan Vlad, Frai Timeea</dd>
+                </dl>
+              </div>
+            </details>
+            <details class="result-row">
+              <summary>
+                <span class="result-date">30 IAN – 2 FEB 2020</span>
+                <span class="result-name">Campionat Național Indoor — Iași <small>R/C/BB, U21, Seniori, Master</small></span>
+                <span class="result-chips"></span>
+                <span class="result-toggle" aria-hidden="true"></span>
+              </summary>
+              <div class="result-detail">
+                <div class="result-photo" data-photo="images/rez-cn-indoor-seniori-2020.jpg" role="img" aria-label="Campionat Național Indoor — Iași, 30 ian – 2 feb 2020"></div>
+                <dl>
+                  <dt>LOCUL I</dt><dd>Albu Ștefana (CU21W)</dd>
+                  <dt>LOCUL II</dt><dd>Avăcăriței Claudia (CSW) · Huțanu Gabriel (RU21M)</dd>
+                  <dt>LOCUL II ECHIPE</dt><dd>CU21M: Ciobanu Alex</dd>
+                  <dt>LOCUL III ECHIPE</dt><dd>RU21M: Andrei Codrin, Ciocan Vlad, Huțanu Gabriel</dd>
+                </dl>
+              </div>
+            </details>
+            <details class="result-row">
+              <summary>
+                <span class="result-date">17–18 IAN 2020</span>
+                <span class="result-name">Cupa Unirii Indoor — Iași <small>R/C/BB, toate categoriile de vârstă (m&f)</small></span>
+                <span class="result-chips"></span>
+                <span class="result-toggle" aria-hidden="true"></span>
+              </summary>
+              <div class="result-detail">
+                <div class="result-photo" data-photo="images/rez-cupa-unirii-2020.jpg" role="img" aria-label="Cupa Unirii — Iași, 17–18 ian 2020"></div>
+                <dl>
+                  <dt>LOCUL I</dt><dd>Albu Ștefana (CU18W) · Huțanu Gabriel (RU18M)</dd>
+                  <dt>LOCUL II</dt><dd>Ciocan Vlad (RU18M) · Munteanu Vlad (CU21M)</dd>
+                  <dt>LOCUL III</dt><dd>Andrei Codrin (RU18M) · Ciobanu Ionuț (CU21M)</dd>
+                </dl>
+              </div>
+            </details>
+            </div>
+            </div>
+          </details>
+
+
+        <div class="events-more">
+          <a href="https://www.facebook.com/blackarrowbelcesti" target="_blank" rel="noopener" class="btn btn-outline">Mai multe pe Facebook</a>
+        </div>
       </div>
-      <a href="https://www.facebook.com/blackarrowbelcesti" target="_blank" rel="noopener" class="btn btn-dark">MAI MULTE PE FACEBOOK</a>
     </section>
 
     <section id="form230" class="callout-section">
@@ -198,6 +648,11 @@
     </div>
   </footer>
 
+  <a href="https://competitii.frta.ro/competitie/18/inscriere" target="_blank" rel="noopener" class="fab-inscrieri" id="fab-inscrieri" aria-label="Înscrieri Cupa Black Arrow 2026">
+    <span class="fab-text">Înscrieri Cupa Black Arrow 2026</span>
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
+  </a>
+
   <div id="f230-overlay">
     <div id="f230-container">
       <span class="inchide-f230" onclick="inchideFormular()">&times;</span>
@@ -206,18 +661,127 @@
   </div>
 
   <script>
-    function deschideFormular() { document.getElementById('f230-overlay').style.display = 'flex'; }
-    function inchideFormular() { document.getElementById('f230-overlay').style.display = 'none'; }
+    function deschideFormular() { document.getElementById('f230-overlay').style.display = 'flex'; document.body.classList.add('f230-open'); }
+    function inchideFormular() { document.getElementById('f230-overlay').style.display = 'none'; document.body.classList.remove('f230-open'); }
 
     function toggleMobileMenu() {
       var open = document.getElementById('mobile-menu').classList.toggle('open');
       document.querySelector('.hamburger-btn').classList.toggle('open', open);
       document.body.classList.toggle('menu-open', open);
     }
-
-    // Aparitie treptata la scroll (efect vizibil doar pe mobil, prin CSS)
     (function () {
-      var targets = document.querySelectorAll('.split-image, .split-video-container, .split-text, .events-section h2, .event-card, .callout-container');
+      var fab = document.getElementById('fab-inscrieri');
+      if (fab && new Date() >= new Date('2026-11-02T00:00:00')) fab.classList.add('is-hidden');
+    })();
+    document.addEventListener('contextmenu', function (e) {
+      if (e.target.closest && e.target.closest('img, video, .hero, .split-image, .split-video-container, .feature-image, .result-photo')) e.preventDefault();
+    });
+    document.addEventListener('dragstart', function (e) {
+      if (e.target.closest && e.target.closest('img, video')) e.preventDefault();
+    });
+    (function () {
+      var mqDesk = window.matchMedia('(min-width: 901px)');
+      var mqRM = window.matchMedia('(prefers-reduced-motion: reduce)');
+      var bar = document.getElementById('scroll-progress');
+      var layers = [].slice.call(document.querySelectorAll('.parallax-layer'));
+      var videos = [].slice.call(document.querySelectorAll('.split-video'));
+      var heroVideo = document.querySelector('.hero-video');
+      var ticking = false;
+
+      function shift(el, host, k, vh) {
+        var r = host.getBoundingClientRect();
+        if (r.bottom < -120 || r.top > vh + 120) return;
+        var p = (r.top + r.height / 2 - vh / 2) / (vh / 2 + r.height / 2);
+        p = Math.max(-1, Math.min(1, p));
+        el.style.setProperty('--py', (-p * r.height * k).toFixed(1) + 'px');
+      }
+
+      function reset() {
+        bar.style.transform = 'scaleX(0)';
+        layers.concat(videos).forEach(function (el) { el.style.removeProperty('--py'); });
+        if (heroVideo) heroVideo.style.removeProperty('--hy');
+      }
+
+      function update() {
+        ticking = false;
+        if (!mqDesk.matches) { reset(); return; }
+        var y = window.pageYOffset || 0;
+        var vh = window.innerHeight;
+        var max = document.documentElement.scrollHeight - vh;
+        bar.style.transform = 'scaleX(' + (max > 0 ? Math.min(y / max, 1) : 0).toFixed(4) + ')';
+
+
+        if (mqRM.matches) return;
+        layers.forEach(function (l) { shift(l, l.parentNode, 0.07, vh); });
+        videos.forEach(function (v) { shift(v, v.parentNode, 0.05, vh); });
+        if (heroVideo && y < vh) heroVideo.style.setProperty('--hy', (y * 0.045).toFixed(1) + 'px');
+      }
+
+      function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(update); } }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', onScroll);
+      update();
+    })();
+    (function () {
+      var media = document.getElementById('feature-media');
+      if (!media) return;
+      var frame = media.querySelector('.feature-frame');
+      var mqDesk = window.matchMedia('(min-width: 901px)');
+      var mqRM = window.matchMedia('(prefers-reduced-motion: reduce)');
+      var mqHover = window.matchMedia('(hover: hover) and (pointer: fine)');
+      var raf = null;
+
+      function setVars(v) { for (var k in v) frame.style.setProperty(k, v[k]); }
+
+      function move(e) {
+        if (!mqDesk.matches || !mqHover.matches || mqRM.matches) return;
+        var r = media.getBoundingClientRect();
+        var px = Math.max(0, Math.min(1, (e.clientX - r.left) / r.width));
+        var py = Math.max(0, Math.min(1, (e.clientY - r.top) / r.height));
+        if (raf) cancelAnimationFrame(raf);
+        raf = requestAnimationFrame(function () {
+          frame.classList.add('is-active');
+          setVars({
+            '--rx': ((0.5 - py) * 10).toFixed(2) + 'deg',
+            '--ry': ((px - 0.5) * 14).toFixed(2) + 'deg',
+            '--sx': (px * 100).toFixed(1) + '%',
+            '--sy': (py * 100).toFixed(1) + '%',
+            '--ix': ((0.5 - px) * 14).toFixed(1) + 'px',
+            '--iy': ((0.5 - py) * 14).toFixed(1) + 'px'
+          });
+        });
+      }
+
+      function leave() {
+        if (raf) cancelAnimationFrame(raf);
+        frame.classList.remove('is-active');
+        setVars({ '--rx': '0deg', '--ry': '0deg', '--ix': '0px', '--iy': '0px' });
+      }
+
+
+      media.addEventListener('mousemove', move);
+      media.addEventListener('mouseleave', leave);
+    })();
+
+    (function () {
+      function load(row) {
+        if (row.dataset.checked) return;
+        row.dataset.checked = '1';
+        var ph = row.querySelector('.result-photo');
+        if (!ph) return;
+        var src = ph.getAttribute('data-photo');
+        var img = new Image();
+        img.onload = function () { ph.style.backgroundImage = "url('" + src + "')"; };
+        img.onerror = function () { ph.parentNode.classList.add('no-photo'); };
+        img.src = src;
+      }
+      [].forEach.call(document.querySelectorAll('.result-row'), function (row) {
+        row.addEventListener('toggle', function () { if (row.open) load(row); });
+      });
+    })();
+
+    (function () {
+      var targets = document.querySelectorAll('.split-image, .split-video-container, .split-text, .events-section h2, .event-feature, .results-title, .result-row, .events-more, .callout-container');
       targets.forEach(function (el) { el.classList.add('reveal'); });
       if (!('IntersectionObserver' in window)) { targets.forEach(function (el) { el.classList.add('in'); }); return; }
       var io = new IntersectionObserver(function (entries) {
