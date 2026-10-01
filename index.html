@@ -27,7 +27,7 @@
 
   <meta name="theme-color" content="#0b0e14">
   <link rel="icon" type="image/png" href="favico.png?v=2">
-  <link rel="stylesheet" href="style.css?v=13">
+  <link rel="stylesheet" href="style.css?v=14">
   <script>document.documentElement.classList.add('js');</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -221,7 +221,7 @@
         <section class="year-group" aria-label="Rezultate 2026">
           <h4 class="year-num">2026</h4>
           <div class="results-list">
-            <details class="result-row has-thumb" open>
+            <details class="result-row has-thumb always-open" open>
               <summary>
                 <span class="result-thumb"><img src="images/event1.jpg" alt="" loading="lazy" decoding="async" draggable="false" onerror="this.remove()"></span>
                 <span class="result-date">18–20 SEP 2026</span>
@@ -380,7 +380,9 @@
             </details>
           </div>
         </section>
-        <section class="year-group" aria-label="Rezultate 2024">
+        <details class="older-years" open>
+          <summary class="older-toggle"><span>Rezultate 2024–2020</span><span class="more-icon" aria-hidden="true"></span></summary>
+          <section class="year-group" aria-label="Rezultate 2024">
           <h4 class="year-num">2024</h4>
           <div class="results-list">
             <details class="result-row">
@@ -423,7 +425,7 @@
             </details>
           </div>
         </section>
-        <section class="year-group" aria-label="Rezultate 2023">
+          <section class="year-group" aria-label="Rezultate 2023">
           <h4 class="year-num">2023</h4>
           <div class="results-list">
             <details class="result-row">
@@ -463,8 +465,6 @@
             </details>
           </div>
         </section>
-        <details class="older-years" open>
-          <summary class="older-toggle"><span>Rezultate 2020–2022</span><span class="older-count">9 competiții</span><span class="more-icon" aria-hidden="true"></span></summary>
           <section class="year-group" aria-label="Rezultate 2022">
           <h4 class="year-num">2022</h4>
           <div class="results-list">
@@ -677,8 +677,6 @@
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
   </a>
 
-  <div class="hover-preview" id="hover-preview" aria-hidden="true"><img alt=""></div>
-
   <div id="f230-overlay">
     <div id="f230-container">
       <span class="inchide-f230" onclick="inchideFormular()">&times;</span>
@@ -812,6 +810,9 @@
       }
 
       rows.forEach(function (row) {
+        if (row.classList.contains('always-open')) {
+          row.querySelector('summary').addEventListener('click', function (e) { e.preventDefault(); });
+        }
         row.addEventListener('toggle', function () {
           if (row.open) show(row);
           else { var l = row.querySelector('.photo-layer'); if (l) l.classList.remove('in'); }
@@ -837,58 +838,6 @@
         sync();
         if (mqSmall.addEventListener) mqSmall.addEventListener('change', sync);
       }
-    })();
-
-    (function () {
-      var box = document.getElementById('hover-preview');
-      if (!box) return;
-      var img = box.querySelector('img');
-      var mq = window.matchMedia('(min-width: 901px) and (hover: hover) and (pointer: fine)');
-      var mqRM = window.matchMedia('(prefers-reduced-motion: reduce)');
-      var bad = {};
-      var x = 0, y = 0, tx = 0, ty = 0, raf = null;
-
-      function loop() {
-        x += (tx - x) * 0.16;
-        y += (ty - y) * 0.16;
-        var rot = Math.max(-5, Math.min(5, (tx - x) * 0.05));
-        box.style.transform = 'translate3d(' + x.toFixed(1) + 'px,' + y.toFixed(1) + 'px,0) rotate(' + rot.toFixed(2) + 'deg)';
-        raf = requestAnimationFrame(loop);
-      }
-
-      function place(e) {
-        var w = box.offsetWidth || 260, hh = box.offsetHeight || 195;
-        var px = e.clientX + 30;
-        if (px + w > window.innerWidth - 16) px = e.clientX - w - 30;
-        var py = Math.max(16, Math.min(window.innerHeight - hh - 16, e.clientY - hh / 2));
-        tx = px; ty = py;
-      }
-
-      function hide() {
-        box.classList.remove('on', 'loaded');
-        if (raf) { cancelAnimationFrame(raf); raf = null; }
-      }
-
-      [].forEach.call(document.querySelectorAll('.result-row > summary'), function (sum) {
-        var row = sum.parentNode;
-        var ph = row.querySelector('.result-photo');
-        if (!ph) return;
-        var src = ph.getAttribute('data-photo');
-        sum.addEventListener('mouseenter', function (e) {
-          if (!mq.matches || mqRM.matches || row.open || bad[src]) return;
-          box.classList.remove('loaded');
-          img.onload = function () { box.classList.add('loaded'); };
-          img.onerror = function () { bad[src] = 1; hide(); };
-          img.src = src;
-          place(e);
-          x = tx; y = ty;
-          box.classList.add('on');
-          if (!raf) loop();
-        });
-        sum.addEventListener('mousemove', function (e) { if (box.classList.contains('on')) place(e); });
-        sum.addEventListener('mouseleave', hide);
-        sum.addEventListener('click', hide);
-      });
     })();
 
     (function () {
