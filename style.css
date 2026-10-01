@@ -700,6 +700,9 @@ video { pointer-events: none; }
 
 .more-label { display: none; }
 
+.result-row.always-open summary { cursor: default; }
+.result-row.always-open .result-more { visibility: hidden; }
+
 .more-icon {
   position: relative;
   flex: none;
@@ -789,34 +792,6 @@ video { pointer-events: none; }
 
 .older-toggle { display: none; }
 
-.hover-preview {
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: 900;
-  width: 260px;
-  aspect-ratio: 4 / 3;
-  overflow: hidden;
-  border-radius: 6px;
-  background: #1b2230;
-  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.8);
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.25s ease;
-}
-
-.hover-preview.on { opacity: 1; }
-
-.hover-preview img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity 0.35s ease;
-}
-
-.hover-preview.loaded img { opacity: 1; }
 
 .events-more { margin-top: 48px; }
 
@@ -1206,10 +1181,10 @@ body.f230-open .fab-inscrieri { opacity: 0; visibility: hidden; pointer-events: 
   }
 
   .result-row summary {
-    grid-template-columns: 1fr 34px;
-    grid-template-areas: "date more" "name more" "chips more";
+    grid-template-columns: 1fr;
+    grid-template-areas: "date" "name" "chips" "more";
     align-items: start;
-    gap: 6px 14px;
+    gap: 6px 0;
     padding: 20px 0;
   }
   .result-row.has-thumb summary {
@@ -1222,9 +1197,9 @@ body.f230-open .fab-inscrieri { opacity: 0; visibility: hidden; pointer-events: 
   .result-name { grid-area: name; font-size: 1.02rem; }
   .result-chips { grid-area: chips; justify-content: flex-start; margin-top: 4px; }
   .result-chips:empty { display: none; }
-  .result-more { grid-area: more; align-self: center; }
-  .result-row.has-thumb .result-more { justify-self: start; margin-top: 8px; }
-  .result-row.has-thumb .more-label {
+  .result-more { grid-area: more; justify-self: start; margin-top: 8px; }
+  .result-row.always-open .result-more { display: none; }
+  .more-label {
     display: inline;
     font-size: .72rem;
     font-weight: 800;
@@ -1274,7 +1249,6 @@ body.f230-open .fab-inscrieri { opacity: 0; visibility: hidden; pointer-events: 
   }
   .older-toggle::-webkit-details-marker { display: none; }
   .older-toggle > span:first-child { flex: 1; }
-  .older-count { font-weight: 600; letter-spacing: 0; text-transform: none; opacity: .65; }
   .older-toggle .more-icon { width: 30px; height: 30px; }
   .older-years[open] > .older-toggle .more-icon {
     background: #ffffff;
@@ -1282,7 +1256,6 @@ body.f230-open .fab-inscrieri { opacity: 0; visibility: hidden; pointer-events: 
     border-color: #ffffff;
     transform: rotate(180deg);
   }
-  .hover-preview { display: none; }
   .events-more .btn { width: 100%; text-align: center; }
 
     .fab-inscrieri {
