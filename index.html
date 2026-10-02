@@ -27,7 +27,7 @@
 
   <meta name="theme-color" content="#0b0e14">
   <link rel="icon" type="image/png" href="favico.png?v=2">
-  <link rel="stylesheet" href="style.css?v=17">
+  <link rel="stylesheet" href="style.css?v=18">
   <script>document.documentElement.classList.add('js');</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -124,7 +124,7 @@
         <a href="#where">Unde</a>
         <a href="#training">Antrenamente</a>
         <a href="#events">Noutăți și rezultate</a>
-        <a href="javascript:void(0)" onclick="deschideFormular()">Formular 230</a>
+        <a href="#contact">Formular 230</a>
         <a href="#contact">Contact</a>
       </nav>
       <button class="hamburger-btn" onclick="toggleMobileMenu()" aria-label="Meniu">
@@ -142,7 +142,7 @@
     <a href="#where" onclick="toggleMobileMenu()">Unde</a>
     <a href="#training" onclick="toggleMobileMenu()">Antrenamente</a>
     <a href="#events" onclick="toggleMobileMenu()">Noutăți și rezultate</a>
-    <a href="javascript:void(0)" onclick="toggleMobileMenu(); deschideFormular();">Formular 230</a>
+    <a href="#contact" onclick="toggleMobileMenu()">Formular 230</a>
     <a href="#contact" onclick="toggleMobileMenu()">Contact</a>
   </div>
 
@@ -696,13 +696,43 @@
   <div id="f230-overlay">
     <div id="f230-container">
       <span class="inchide-f230" onclick="inchideFormular()">&times;</span>
-      <iframe src="https://formular230.ro/asociatia-club-sportiv-black-arrow-belcesti" title="Formular 230 ACS Black Arrow Belcești"></iframe>
+      <iframe data-src="https://formular230.ro/asociatia-club-sportiv-black-arrow-belcesti" title="Formular 230 ACS Black Arrow Belcești"></iframe>
+    </div>
+  </div>
+
+  <div id="f230-closed" class="f230-closed" role="dialog" aria-modal="true" aria-labelledby="f230-closed-title">
+    <div class="f230-card">
+      <button type="button" class="f230-x" onclick="inchideFormular()" aria-label="Închide">&times;</button>
+      <span class="f230-line" aria-hidden="true"></span>
+      <h3 id="f230-closed-title">Campania de depunere online a formularelor 230&nbsp;s&#8209;a&nbsp;încheiat.</h3>
+      <p>Îți mulțumim pentru dorința de a redirecționa 3,5% din impozitul tău pentru noi!</p>
+      <p class="f230-last">Te așteptăm și anul următor să ne susții!</p>
     </div>
   </div>
 
   <script>
-    function deschideFormular() { document.getElementById('f230-overlay').style.display = 'flex'; document.body.classList.add('f230-open'); }
-    function inchideFormular() { document.getElementById('f230-overlay').style.display = 'none'; document.body.classList.remove('f230-open'); }
+    var FORMULAR_230_ACTIV = false;
+
+    function deschideFormular() {
+      if (FORMULAR_230_ACTIV) {
+        var ifr = document.querySelector('#f230-container iframe');
+        if (!ifr.getAttribute('src')) ifr.setAttribute('src', ifr.getAttribute('data-src'));
+        document.getElementById('f230-overlay').style.display = 'flex';
+      } else {
+        document.getElementById('f230-closed').classList.add('open');
+        document.querySelector('#f230-closed .f230-x').focus({ preventScroll: true });
+      }
+      document.body.classList.add('f230-open');
+    }
+
+    function inchideFormular() {
+      document.getElementById('f230-overlay').style.display = 'none';
+      document.getElementById('f230-closed').classList.remove('open');
+      document.body.classList.remove('f230-open');
+    }
+
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') inchideFormular(); });
+    document.getElementById('f230-closed').addEventListener('click', function (e) { if (e.target === this) inchideFormular(); });
 
     function toggleMobileMenu() {
       var open = document.getElementById('mobile-menu').classList.toggle('open');
