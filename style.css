@@ -513,6 +513,8 @@ video { pointer-events: none; }
   transition: transform 0.4s ease-out;
 }
 
+.feature-media { display: block; color: inherit; text-decoration: none; cursor: pointer; }
+
 .feature-shine {
   position: absolute;
   inset: 0;
@@ -546,6 +548,7 @@ video { pointer-events: none; }
   letter-spacing: -1px;
   text-transform: uppercase;
   margin-bottom: 22px;
+  color: #ffffff;
 }
 
 .feature-body h3 {
@@ -791,7 +794,6 @@ video { pointer-events: none; }
 }
 
 .older-toggle { display: none; }
-
 
 .events-more { margin-top: 48px; }
 
